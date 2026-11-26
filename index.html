@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#fff7e6">
+<title>Cuba Baju</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="stage"><canvas id="cv"></canvas></div>
+
+<header id="top">
+  <button class="ic" id="homeBtn" aria-label="Home"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></button>
+  <button class="chip" id="ptsBtn"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M12 7v6M12 13l-5 4M12 13l5 4"/></svg><span class="lbl" data-t="points"></span></button>
+  <span class="grow"></span>
+  <button class="chip" id="langBtn">BM</button>
+  <button class="chip pri" id="saveBtn"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg><span class="lbl" data-t="save"></span></button>
+</header>
+
+<div id="pill" class="hidden"></div>
+
+<section id="adjust" class="hidden">
+  <div class="row"><b id="adjName"></b><span class="grow"></span>
+    <button class="mini" id="flipBtn" data-t="flip"></button>
+    <button class="mini" id="pairBtn" data-t="pair"></button>
+    <button class="mini" id="resetBtn" data-t="reset"></button>
+    <button class="mini hot" id="delBtn" data-t="remove"></button>
+    <button class="mini" id="doneBtn" data-t="done"></button></div>
+  <label><span data-t="size"></span><input type="range" id="sScale" min="0.5" max="2" step="0.01"></label>
+  <label><span data-t="width"></span><input type="range" id="sW" min="0.5" max="1.8" step="0.01"></label>
+  <label><span id="lblH"></span><input type="range" id="sH" min="0.2" max="1.8" step="0.01"></label>
+  <label><span data-t="rotate"></span><input type="range" id="sRot" min="-45" max="45" step="0.5"></label>
+  <label><span data-t="bg"></span><input type="range" id="sTol" min="0" max="120" step="1"></label>
+  <p class="hint" data-t="dragHint"></p>
+</section>
+
+<nav id="dock">
+  <button class="slot" data-slot="hat"><span class="th"></span><span data-t="hat"></span></button>
+  <button class="slot" data-slot="top"><span class="th"></span><span data-t="top"></span></button>
+  <button class="slot" data-slot="pants"><span class="th"></span><span data-t="pants"></span></button>
+  <button class="slot" data-slot="shoes"><span class="th"></span><span data-t="shoes"></span></button>
+</nav>
+
+<div id="scrim" class="hidden"></div>
+<section id="sheet" class="hidden">
+  <h2 id="sheetTitle"></h2>
+  <div class="btns">
+    <button class="big pri" id="gUpload"><span data-t="upload"></span></button>
+    <button class="big" id="gCamera"><span data-t="camera"></span></button>
+  </div>
+  <p class="hint" data-t="garmentTip"></p>
+  <h3 data-t="samples"></h3>
+  <div id="sampleRow"></div>
+  <button class="mini" id="sheetClose" data-t="close"></button>
+</section>
+
+<section id="overlay">
+  <div class="card">
+    <img src="assets/mascot/sendi-happy.svg" alt="" width="120" height="120">
+    <h1>Cuba Baju</h1>
+    <p data-t="intro"></p>
+    <button class="big pri" id="oCamera" data-t="takePhoto"></button>
+    <button class="big" id="oUpload" data-t="pickPhoto"></button>
+    <button class="big ghost" id="oDemo" data-t="tryDemo"></button>
+    <p class="hint lock" data-t="privacy"></p>
+    <button class="chip" id="oLang">English</button>
+  </div>
+</section>
+
+<input type="file" id="fPhoto" accept="image/*" hidden>
+<input type="file" id="fPhotoCam" accept="image/*" capture="environment" hidden>
+<input type="file" id="fGar" accept="image/*" hidden>
+<input type="file" id="fGarCam" accept="image/*" capture="environment" hidden>
+
+<script src="js/i18n.js"></script>
+<script src="js/samples.js"></script>
+<script src="js/cutout.js"></script>
+<script src="js/pose.js"></script>
+<script src="js/fit.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
